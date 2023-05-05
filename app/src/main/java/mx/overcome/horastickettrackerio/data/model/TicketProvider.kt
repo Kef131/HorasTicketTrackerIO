@@ -7,6 +7,9 @@ import mx.overcome.horastickettrackerio.utils.toDate
 import java.time.LocalDateTime
 import java.util.Date
 
+/**
+ * The next class works as mock data provider, while the rooom or retrofit implementation is done
+ */
 class TicketProvider {
 
     companion object {

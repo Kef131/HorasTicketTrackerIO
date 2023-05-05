@@ -35,6 +35,7 @@ class TicketListAdapter(private val clickListener: OnTicketClickListener) :
                 cardTvDescriptionTicket.text = ticket.description ?: "Error retrieving data from model"
                 cardTvTypeTicket.text = ticket.ticketType.toString() ?: "Error retrieving data from model"
                 cardTvPriorityTicket.text = ticket.priorityTicket.toString() ?: "Error retrieving data from model"
+                cardTvStatus.text = ticket.status.toString() ?: "Error retrieving data from model"
             }
             binding.root.setOnClickListener {
                 clickListener.onTicketClick(ticket)

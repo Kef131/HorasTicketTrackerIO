@@ -2,6 +2,7 @@ package mx.overcome.horastickettrackerio.presentation.ui.fragment
 
 import android.os.Bundle
 import android.util.Log
+import android.view.ContextMenu
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,10 +43,17 @@ class TicketListFragment : Fragment(), OnTicketClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        setHasOptionsMenu(true)
+        binding.fragTicketListEtFilterList.setOnClickListener {
+            requireActivity().openContextMenu(it)
+        }
+
         ticketViewModel.ticketList.observe(viewLifecycleOwner) { ticketList ->
             ticketListAdapter.submitList(ticketList)
         }
     }
+
+
 
     private fun initRecyclerView() {
         ticketListAdapter = TicketListAdapter(this)
@@ -53,6 +61,11 @@ class TicketListFragment : Fragment(), OnTicketClickListener {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = ticketListAdapter
         }
+    }
+
+    override fun onCreateContextMenu(menu: ContextMenu, v: View, menuInfo: ContextMenu.ContextMenuInfo?) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        requireActivity().menuInflater.inflate(R.menu.ticket_list_filter_menu, menu)
     }
 
     // Implement interface to open TicketDetailFragment on click with Ticket Information

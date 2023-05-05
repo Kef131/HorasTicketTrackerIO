@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
+        setSupportActionBar(binding.toolbar)
+
         // Add the fragment to the 'fragment_container' FrameLayout
         if (savedInstanceState == null) {
             supportFragmentManager
