@@ -26,13 +26,16 @@
 
         <TextView
             android:id="@+id/card_tv_title_ticket"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
             android:hint="Ticket TItle"
+            android:inputType="textMultiLine"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline_hor"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_ver"
             app:layout_constraintStart_toEndOf="@+id/card_tv_id_ticket"
             app:layout_constraintTop_toTopOf="parent" />
 

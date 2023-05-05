@@ -3,6 +3,8 @@ package mx.overcome.horastickettrackerio.data.model
 import mx.overcome.horastickettrackerio.utils.TicketType
 import mx.overcome.horastickettrackerio.utils.PriorityTicket
 import mx.overcome.horastickettrackerio.utils.TicketState
+import mx.overcome.horastickettrackerio.utils.toDate
+import java.time.LocalDateTime
 import java.util.Date
 
 class TicketProvider {
@@ -17,37 +19,44 @@ class TicketProvider {
             return tickets
         }
 
+
         private val tickets = listOf(
            Ticket(
                1,
-               "Ticket 1",
-               Date( 2021, 1, 1, 1, 1, 1),
+               "Server Problem: Not responding",
+               LocalDateTime.now().toDate(),
                "Juan",
-               null,
+               "Development",
                TicketType.BUG,
                PriorityTicket.HIGH,
-               null,
-               "Description of ticket 1\nDescription of ticket 1\nDescription of ticket 1",
+               "1.0",
+               " Users are unable to access the email service due " +
+                       "to a \"Server not responding\" error message. The issue has " +
+                       "been ongoing for the past hour, and multiple users have reported the same problem.",
                null,
                TicketState.OPEN
            ),
             Ticket(
                 2,
-                "Ticket 2",
-                Date( 2021, 1, 1, 1, 1, 1),
-                "Juan",
+                "Change colors of the main interface",
+                LocalDateTime.now().toDate(),
+                "Maria",
                 null,
                 TicketType.FEATURE,
                 PriorityTicket.MEDIUM,
-                null,
-                "Description of ticket 2\nDescription of ticket 2\nDescription of ticket 2",
+                "1.03 Aplha",
+                "Modify the color scheme of the main interface" +
+                        " to align with the design specifications or user " +
+                        "preferences. This should include adjustments to the " +
+                        "background color, font color, and button color, in order" +
+                        " to enhance the overall visual appeal and usability of the interface.",
                 null,
                 TicketState.IN_PROGRESS
             ),
             Ticket(
                 3,
                 "Ticket 3",
-                Date( 2021, 1, 1, 1, 1, 1),
+                LocalDateTime.now().toDate(),
                 "Juan",
                 null,
                 TicketType.BUG,
@@ -60,7 +69,7 @@ class TicketProvider {
             Ticket(
                 4,
                 "Ticket 4",
-                Date( 2021, 1, 1, 1, 1, 1),
+                LocalDateTime.now().toDate(),
                 "Juan",
                 null,
                 TicketType.BUG,
@@ -73,7 +82,7 @@ class TicketProvider {
             Ticket(
                 5,
                 "Ticket 5",
-                Date( 2021, 1, 1, 1, 1, 1),
+                LocalDateTime.now().toDate(),
                 "Juan",
                 null,
                 TicketType.BUG,

@@ -9,7 +9,7 @@ import mx.overcome.horastickettrackerio.data.model.Ticket
 import mx.overcome.horastickettrackerio.databinding.ItemTicketSummaryBinding
 
 
-class TicketListAdapter :
+class TicketListAdapter(private val clickListener: OnTicketClickListener) :
     ListAdapter<Ticket, TicketListAdapter.TicketViewHolder>(TicketDiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TicketViewHolder {
@@ -33,6 +33,9 @@ class TicketListAdapter :
                 cardTvDescriptionTicket.text = ticket.description ?: "Error retrieving data from model"
                 cardTvTypeTicket.text = ticket.ticketType.toString() ?: "Error retrieving data from model"
                 cardTvPriorityTicket.text = ticket.priorityTicket.toString() ?: "Error retrieving data from model"
+            }
+            binding.root.setOnClickListener {
+                clickListener.onTicketClick(ticket)
             }
         }
     }

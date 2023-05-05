@@ -6,7 +6,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.activityViewModels
 import mx.overcome.horastickettrackerio.R
+import mx.overcome.horastickettrackerio.data.model.Ticket
 import mx.overcome.horastickettrackerio.databinding.ActivityMainBinding
+import mx.overcome.horastickettrackerio.presentation.adapter.OnTicketClickListener
+import mx.overcome.horastickettrackerio.presentation.adapter.TicketListAdapter
 import mx.overcome.horastickettrackerio.presentation.ui.fragment.TicketListFragment
 import mx.overcome.horastickettrackerio.presentation.ui.viewmodel.TicketViewModel
 
@@ -34,4 +37,5 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 }
