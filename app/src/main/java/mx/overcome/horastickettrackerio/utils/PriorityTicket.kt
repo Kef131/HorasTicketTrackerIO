@@ -1,6 +1,6 @@
 package mx.overcome.horastickettrackerio.utils
 
-enum class Priority {
+enum class PriorityTicket {
     LOW,
     MEDIUM,
     HIGH

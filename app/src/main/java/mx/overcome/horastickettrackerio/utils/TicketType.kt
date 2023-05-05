@@ -1,6 +1,6 @@
 package mx.overcome.horastickettrackerio.utils
 
-enum class IncidentType {
+enum class TicketType {
     BUG,
     FEATURE
 }

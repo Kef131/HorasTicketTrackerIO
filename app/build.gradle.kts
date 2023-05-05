@@ -61,6 +61,9 @@ dependencies {
     implementation(libs.androidx.room)
     annotationProcessor(libs.androidx.room.annotation)
 
+    //Fragment
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+
     implementation(libs.squareup.retrofit)
     implementation(libs.squareup.retrofit.gson)
     implementation(libs.squareup.retrofit.rxjava)
