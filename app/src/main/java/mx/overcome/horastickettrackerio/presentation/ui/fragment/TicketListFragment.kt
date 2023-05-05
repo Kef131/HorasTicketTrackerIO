@@ -15,6 +15,7 @@ import mx.overcome.horastickettrackerio.data.model.Ticket
 import mx.overcome.horastickettrackerio.databinding.FragmentTicketListBinding
 import mx.overcome.horastickettrackerio.presentation.adapter.OnTicketClickListener
 import mx.overcome.horastickettrackerio.presentation.adapter.TicketListAdapter
+import mx.overcome.horastickettrackerio.presentation.ui.activity.MainActivity
 import mx.overcome.horastickettrackerio.presentation.ui.viewmodel.TicketViewModel
 
 
@@ -30,16 +31,16 @@ class TicketListFragment : Fragment(), OnTicketClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         _binding = FragmentTicketListBinding.inflate(inflater, container, false)
         initRecyclerView()
+        (requireActivity() as MainActivity).getFabAddTicket().show()
         return binding.root
 
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
 
         ticketViewModel.ticketList.observe(viewLifecycleOwner) { ticketList ->
             ticketListAdapter.submitList(ticketList)
@@ -54,6 +55,7 @@ class TicketListFragment : Fragment(), OnTicketClickListener {
         }
     }
 
+    // Implement interface to open TicketDetailFragment on click with Ticket Information
     override fun onTicketClick(ticket: Ticket) {
         val ticketDetailFragment = TicketDetailFragment.newInstance(ticket)
         requireActivity().supportFragmentManager

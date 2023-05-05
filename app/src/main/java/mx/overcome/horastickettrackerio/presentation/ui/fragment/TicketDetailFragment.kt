@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import mx.overcome.horastickettrackerio.R
 import mx.overcome.horastickettrackerio.data.model.Ticket
 import mx.overcome.horastickettrackerio.databinding.FragmentTicketDetailBinding
+import mx.overcome.horastickettrackerio.presentation.ui.activity.MainActivity
 import java.text.SimpleDateFormat
 
 class TicketDetailFragment : Fragment() {
@@ -40,7 +41,7 @@ class TicketDetailFragment : Fragment() {
             requireActivity().supportFragmentManager.popBackStack()
         }
 
-
+        (requireActivity() as MainActivity).getFabAddTicket().hide()
         return binding.root
     }
 

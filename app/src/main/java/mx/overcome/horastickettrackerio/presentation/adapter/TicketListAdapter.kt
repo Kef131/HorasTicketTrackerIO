@@ -5,8 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import mx.overcome.horastickettrackerio.R
 import mx.overcome.horastickettrackerio.data.model.Ticket
 import mx.overcome.horastickettrackerio.databinding.ItemTicketSummaryBinding
+import mx.overcome.horastickettrackerio.utils.TicketState
 
 
 class TicketListAdapter(private val clickListener: OnTicketClickListener) :
@@ -36,6 +38,12 @@ class TicketListAdapter(private val clickListener: OnTicketClickListener) :
             }
             binding.root.setOnClickListener {
                 clickListener.onTicketClick(ticket)
+            }
+            when(ticket.status) {
+                TicketState.OPEN -> binding.cardCardviewTicket.backgroundTintList = binding.root.context.resources.getColorStateList(R.color.openTicket)
+                TicketState.IN_PROGRESS -> binding.cardCardviewTicket.backgroundTintList = binding.root.context.resources.getColorStateList(R.color.inProgressTicket)
+                TicketState.RESOLVED -> binding.cardCardviewTicket.backgroundTintList = binding.root.context.resources.getColorStateList(R.color.resolvedTicket)
+                TicketState.ARCHIVED -> binding.cardCardviewTicket.backgroundTintList = binding.root.context.resources.getColorStateList(R.color.archivedTicket)
             }
         }
     }

@@ -55,40 +55,45 @@ class TicketProvider {
             ),
             Ticket(
                 3,
-                "Ticket 3",
+                "Database Connection Timeout",
                 LocalDateTime.now().toDate(),
-                "Juan",
-                null,
+                "Jane",
+                "Development",
                 TicketType.BUG,
                 PriorityTicket.HIGH,
-                null,
-                "Description of ticket 3\nDescription of ticket 3\nDescription of ticket 3",
-                null,
-                TicketState.IN_PROGRESS
-            ),
-            Ticket(
-                4,
-                "Ticket 4",
-                LocalDateTime.now().toDate(),
-                "Juan",
-                null,
-                TicketType.BUG,
-                PriorityTicket.HIGH,
-                null,
-                "Description of ticket 4\nDescription of ticket 4\nDescription of ticket 4",
+                "1.1",
+                "Users are experiencing slow response times when accessing the application, " +
+                        "and some are encountering a database connection timeout error. This issue has been " +
+                        "reported by multiple users and needs to be investigated urgently.",
                 null,
                 TicketState.RESOLVED
             ),
             Ticket(
-                5,
-                "Ticket 5",
+                4,
+                "Implement Dark Mode",
                 LocalDateTime.now().toDate(),
-                "Juan",
+                "Pedro",
+                "Design",
+                TicketType.FEATURE,
+                PriorityTicket.MEDIUM,
+                "1.03 Alpha",
+                "Introduce a dark mode option to the application to provide a better user experience " +
+                        "in low-light environments. This should include an easy toggle for users to switch " +
+                        "between light and dark mode according to their preferences.",
                 null,
+                TicketState.IN_PROGRESS
+            ),
+            Ticket(
+                5,
+                "Fix Broken Links in Help Documentation",
+                LocalDateTime.now().toDate(),
+                "Samantha",
+                "Documentation",
                 TicketType.BUG,
-                PriorityTicket.HIGH,
-                null,
-                "Description of ticket 5\nDescription of ticket 5\nDescription of ticket 5",
+                PriorityTicket.LOW,
+                "1.0",
+                "Several broken links have been reported in the help documentation. These need to be identified " +
+                        "and fixed to ensure users can easily navigate and access relevant information.",
                 null,
                 TicketState.ARCHIVED
             ),
