@@ -45,7 +45,7 @@ HorasTicketTrackerIO is an Android application for tracking support tickets rela
 The application follows the MVVM architectural pattern, separating the UI components, business logic, and data layers. The data layer will use a local Room database for ticket storage and management.
 
 ### Project Structure
-
+```
 └── mx
 └── overcome
 └── horastickettrackerio
@@ -88,6 +88,7 @@ The application follows the MVVM architectural pattern, separating the UI compon
 ├── PriorityTicket.kt
 ├── TicketState.kt
 └── TicketType.kt
+```
 
 # Conclusion and Results
 
